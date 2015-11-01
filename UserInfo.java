@@ -58,7 +58,7 @@ public class UserInfo {
 				  break;
 			}
 		}
-	}
+	} 
 	
 	void addUserInfo() throws IOException{
 		v=userData();  //파일 내용저장 매소드
