@@ -21,14 +21,20 @@ public class UserInfo {
 		System.out.println(title);
 		mainScreen();
 	}
+	
 	void mainScreen() throws IOException{
 		for(;;)
 		{
 			System.out.println("       ************************************       ");
-			System.out.println("        [1]학생 등록 [2]수정 [3]삭제 [4]조회 [5]종료            ");
+			//System.out.println("        [1]학생 등록 [2]수정 [3]삭제 [4]조회 [5]종료            ");
+			System.out.println("          [1] 학생 정보 등록            ");
+			System.out.println("          [2] 학생 정보 수정             ");
+			System.out.println("          [3] 학생 정보 삭제           ");
+			System.out.println("          [4] 학생 정보 조회             ");
+			System.out.println("          [5] 프로그램 종료            ");
 			System.out.println("       ************************************       ");
-			System.out.println("***등록전! UerInfo,txt 파일이 디렉토리에 있는지 확인해주세요***");
-			System.out.print("선택[숫자]: ");
+			System.out.println("      등록전! UerInfo.txt 파일이 디렉토리에 있는지 확인해주세요");
+			System.out.print("      선택[숫자]:");
 			String str=br.readLine();
 			if(str.equals(""))
 			{
@@ -76,11 +82,11 @@ public class UserInfo {
 			}
 		}
 		
-		System.out.print("이름: ");
+		System.out.print("이름:");
 		name = br.readLine();
-		System.out.print("전공: ");
+		System.out.print("전공:");
 		department = br.readLine();
-		System.out.print("전화번호: ");
+		System.out.print("전화번호:");
 		Phone_number = br.readLine();
 		
 		FileWriter fw = null;
@@ -112,7 +118,7 @@ public class UserInfo {
 		v=userData();
 		HashMap test = new HashMap();
 		boolean idCheck = false;
-		System.out.println("수정할 학번을 선택하세요");
+		System.out.println("수정할 학번을 입력하세요");
 		Id = br.readLine();
 		/*아이디 삭제*/
 		for(int i=0; i<v.size(); i++){
@@ -152,7 +158,7 @@ public class UserInfo {
 		}
 		/*id 부터 재입력=수정작업 시작*/
 		System.out.println("학번/이름/전공/전화번호 각각 Enter키 후 입력해주세요");
-		System.out.println("단, 전화번호만 수정해주세요.");
+		System.out.println("단, 전화번호 외의 다른 정보도 수정가능합니다:).");
 		Id = br.readLine();
 		name = br.readLine();
 		department = br.readLine();
@@ -176,6 +182,7 @@ public class UserInfo {
 			bw.write(Phone_number);
 			bw.newLine();
 			bw.flush();
+                                  System.out.println("수정 완료!");
 		}
 		v.clear();
 	}
@@ -184,7 +191,7 @@ public class UserInfo {
 		v=userData();
 		HashMap test = new HashMap();
 		boolean idCheck = false;
-		System.out.print("삭제할 학번을 입력하세요: ");
+		System.out.println("삭제할 학번을 입력하세요");
 		Id = br.readLine();
 		for(int i=0; i<v.size(); i++){
 			test = (HashMap)v.get(i);
@@ -197,7 +204,7 @@ public class UserInfo {
 				System.out.println("전화번호: "+ test.get("Phone_number"));
 				idCheck=true;
 				v.removeElementAt(i);
-				
+				System.out.println("삭제 완료!");
 			}
 		}
 		if(!idCheck){
@@ -250,7 +257,7 @@ public class UserInfo {
 	}
 	
 	void endUserInfo() throws IOException{
-		System.out.println("프로그램을 종료함니다");
+		System.out.println("프로그램을 종료합니다");
 		System.exit(0);
 	}
 	
