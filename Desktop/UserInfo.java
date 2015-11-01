@@ -13,7 +13,6 @@ public class UserInfo {
 	String name;
 	String Phone_number;
 	String department;
-	
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	Vector v;
 	StringTokenizer tok;
@@ -26,7 +25,6 @@ public class UserInfo {
 		for(;;)
 		{
 			System.out.println("       ************************************       ");
-			//System.out.println("        [1]학생 등록 [2]수정 [3]삭제 [4]조회 [5]종료            ");
 			System.out.println("          [1] 학생 정보 등록            ");
 			System.out.println("          [2] 학생 정보 수정             ");
 			System.out.println("          [3] 학생 정보 삭제           ");
@@ -182,7 +180,7 @@ public class UserInfo {
 			bw.write(Phone_number);
 			bw.newLine();
 			bw.flush();
-                                  System.out.println("수정 완료!");
+			System.out.println("수정 완료!");
 		}
 		v.clear();
 	}
@@ -198,6 +196,7 @@ public class UserInfo {
 			String idtest = (String)test.get("Id");
 			if(Id.equals(idtest))
 			{
+				System.out.println("아래의 삭제 정보를 확인해주세요.");
 				System.out.println("학번 확인: "+ test.get("Id"));
 				System.out.println("이 름: "+ test.get("name"));
 				System.out.println("전 공: "+ test.get("department"));
