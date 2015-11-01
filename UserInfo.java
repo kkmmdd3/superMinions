@@ -60,6 +60,7 @@ public class UserInfo {
 		}
 	}
 
+	//¤Ç¸ð¤Ç
 	void watchUserInfo() throws IOException{
 		v = userData();
 		HashMap test = new HashMap();
