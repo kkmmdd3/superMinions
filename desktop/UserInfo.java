@@ -25,9 +25,10 @@ public class UserInfo {
 	void mainScreen() throws IOException{
 		for(;;)
 		{
-			System.out.println("*********************************");
-			System.out.println(" [1]등록 [2]수정 [3]삭제 [4]조회 [5]종료 ");
-			System.out.println("*********************************");
+			System.out.println("       ************************************       ");
+			System.out.println("        [1]학생 등록 [2]수정 [3]삭제 [4]조회 [5]종료            ");
+			System.out.println("       ************************************       ");
+			System.out.println("***등록전! UerInfo,txt 파일이 디렉토리에 있는지 확인해주세요***");
 			System.out.print("선택[숫자]: ");
 			String str=br.readLine();
 			if(str.equals(""))
@@ -67,11 +68,11 @@ public class UserInfo {
 		Id = br.readLine();
 		for(int i=0; i<v.size(); i++){
 			test = (HashMap)v.get(i);
-			String idtest = (String)test.get("Id");
-			if(Id.equals(test))
+			String idmulticheck = (String)test.get("Id");
+			if(Id.equals(idmulticheck))
 			{
 				System.out.println("이미 등록되어 있는 학번입니다.");
-				System.out.println("다시 입력해주세요");
+				System.out.println("다시 등록해주세요");
 				return;
 			}
 		}
@@ -80,7 +81,7 @@ public class UserInfo {
 		name = br.readLine();
 		System.out.print("전공: ");
 		department = br.readLine();
-		System.out.print("전화번호('-'없이 입력): ");
+		System.out.print("전화번호: ");
 		Phone_number = br.readLine();
 		
 		FileWriter fw = null;
@@ -95,11 +96,11 @@ public class UserInfo {
 			fw = new FileWriter("UserInfo.txt", true);
 			bw = new BufferedWriter(fw);
 			bw.write(Id);
-			bw.write(" ");
+			bw.write(",");
 			bw.write(name);
-			bw.write(" ");
+			bw.write(",");
 			bw.write(department);
-			bw.write(" ");
+			bw.write(",");
 			bw.write(Phone_number);
 			bw.newLine();
 			bw.flush();
@@ -139,28 +140,26 @@ public class UserInfo {
 			String Id = (String)modifyFile.get("Id");
 			String name = (String)modifyFile.get("name");
 			String department = (String)modifyFile.get("department");
-			String Phone_numeber = (String)modifyFile.get("Phone_number");
+			String Phone_number = (String)modifyFile.get("Phone_number");
 			bw.write(Id);
-			bw.write(" ");
+			bw.write(",");
 			bw.write(name);
-			bw.write(" ");
+			bw.write(",");
 			bw.write(department);
-			bw.write(" ");
+			bw.write(",");
 			bw.write(Phone_number);
 			bw.newLine();
 			bw.flush();
 		}
-		/* id 부터 재입력=수정작업 시작*/
-		System.out.println("수정할 학번을 입력하세요");
+		/*id 부터 재입력=수정작업 시작*/
+		System.out.println("학번/이름/전공/전화번호 각각 Enter키 후 입력해주세요");
+		System.out.println("단, 전화번호만 수정해주세요.");
 		Id = br.readLine();
-		System.out.println("수정할 이름을 입력하새요");
 		name = br.readLine();
-		System.out.println("수정할 전공을 입력하새요");
 		department = br.readLine();
-		System.out.println("수정할 전화번호를 입력하새요");
 		Phone_number = br.readLine();
 		
-		if(Id.equals("") || name.equals("") || department.equals("") || Phone_number.equals("")  )
+		if(Id.equals("") || name.equals("") || department.equals("") || Phone_number.equals(""))
 		{
 			System.out.println("누락된 항목이 있습니다");
 			System.out.println("다시 입력해주세요");
@@ -170,11 +169,11 @@ public class UserInfo {
 			fw = new FileWriter("UserInfo.txt", true);
 			bw = new BufferedWriter(fw);
 			bw.write(Id);
-			bw.write("");
+			bw.write(",");
 			bw.write(name);
-			bw.write("");
+			bw.write(",");
 			bw.write(department);
-			bw.write("");
+			bw.write(",");
 			bw.write(Phone_number);
 			bw.newLine();
 			bw.flush();
@@ -199,6 +198,7 @@ public class UserInfo {
 				System.out.println("전화번호: "+ test.get("Phone_number"));
 				idCheck=true;
 				v.removeElementAt(i);
+				
 			}
 		}
 		if(!idCheck){
@@ -216,13 +216,13 @@ public class UserInfo {
 			String Id = (String)modifyFile.get("Id");
 			String name = (String)modifyFile.get("name");
 			String department = (String)modifyFile.get("department");
-			String Phone_numeber = (String)modifyFile.get("Phone_number");
+			String Phone_number = (String)modifyFile.get("Phone_number");
 			bw.write(Id);
-			bw.write(" ");
+			bw.write(",");
 			bw.write(name);
-			bw.write(" ");
+			bw.write(",");
 			bw.write(department);
-			bw.write(" ");
+			bw.write(",");
 			bw.write(Phone_number);
 			bw.newLine();
 			bw.flush();
@@ -240,14 +240,13 @@ public class UserInfo {
 			String nametest = (String)test.get("name");
 			String departtest = (String)test.get("department");
 			String Phonetest = (String)test.get("Phone_number");
-			System.out.println("학번: "+ idtest + "이 름: "+ nametest
-					+ "전 공: "+departtest +"전화번호: "+ Phone_number);
+			System.out.println("학번: "+ idtest+'\t'+"이 름: "+ nametest+'\t'
+					+ "전 공: "+departtest +'\t'+"전화번호: "+ Phonetest);
 		}
 		if(v.isEmpty())
 		{
 			System.out.println("자료가 존재하지 않습니다");
 		}
-		System.out.println("size: "+v.size());
 		v.clear();
 	}
 	
@@ -266,7 +265,7 @@ public class UserInfo {
 		while((message = br.readLine())!=null)
 		{
 			HashMap map = new HashMap();
-			tok = new StringTokenizer(message, " ");
+			tok = new StringTokenizer(message, ",");
 			while(tok.hasMoreTokens()){
 				Id = tok.nextToken();
 				name = tok.nextToken();
@@ -285,7 +284,7 @@ public class UserInfo {
 	
 	public static void main(String[] args) throws IOException
 	{
-		new UserInfo("<<<<<학생관리 프로그램>>>>>");
+		new UserInfo("              <<<<<학생관리 프로그램>>>>>>           ");
 	}
 }
 
