@@ -59,6 +59,27 @@ public class UserInfo {
 			}
 		}
 	}
+
+	void watchUserInfo() throws IOException{
+		v = userData();
+		HashMap test = new HashMap();
+		for(int i=0; i<v.size(); i++)
+		{
+			test = (HashMap)v.get(i);
+			String idtest = (String)test.get("Id");
+			String nametest = (String)test.get("name");
+			String departtest = (String)test.get("department");
+			String Phonetest = (String)test.get("Phone_number");
+			System.out.println("학번: "+ idtest + "이 름: "+ nametest
+					+ "전 공: "+departtest +"전화번호: "+ Phone_number);
+		}
+		if(v.isEmpty())
+		{
+			System.out.println("자료가 존재하지 않습니다");
+		}
+		System.out.println("size: "+v.size());
+		v.clear();
+	}
 	
 	public static void main(String[] args) throws IOException
 	{
