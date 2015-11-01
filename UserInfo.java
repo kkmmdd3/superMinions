@@ -289,4 +289,4 @@ public class UserInfo {
 	}
 }
 
-
+// 함수 넣어보는 걸로 수정해보았다.
