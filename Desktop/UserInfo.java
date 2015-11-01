@@ -31,7 +31,7 @@ public class UserInfo {
 			System.out.println("          [4] 학생 정보 조회             ");
 			System.out.println("          [5] 프로그램 종료            ");
 			System.out.println("       ************************************       ");
-			System.out.println("      등록전! UerInfo.txt 파일이 디렉토리에 있는지 확인해주세요");
+			System.out.println("      등록전! UserInfo.txt 파일이 디렉토리에 있는지 확인해주세요");
 			System.out.print("      선택[숫자]:");
 			String str=br.readLine();
 			if(str.equals(""))
@@ -282,7 +282,7 @@ public class UserInfo {
 				map.put("Phone_number", Phone_number);
 				
 			}
-			v.addElement(map);
+			v.addElement(map);  
 		}
 		return v;
 	}
