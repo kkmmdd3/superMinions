@@ -60,6 +60,7 @@ public class UserInfo {
 		}
 	}
 
+	//보기 기능
 	void watchUserInfo() throws IOException{
 		v = userData();
 		HashMap test = new HashMap();
