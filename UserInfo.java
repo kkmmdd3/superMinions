@@ -288,4 +288,4 @@ public class UserInfo {
 		new UserInfo("<<<<<학생관리 프로그램>>>>>");
 	}
 }   
-
+       
