@@ -107,7 +107,7 @@ public class UserInfo {
 			bw.close();
 		}
 
-
+	//학생정보 업데이트
 	void updateUserInfo() throws IOException {
 		v=userData();
 		HashMap test = new HashMap();
