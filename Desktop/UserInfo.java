@@ -4,24 +4,24 @@ import java.io.FileReader;
 import java.io.FileWriter;   
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;      
-import java.util.StringTokenizer;     
+import java.util.HashMap;
+import java.util.StringTokenizer;
 import java.util.Vector;
    
 public class UserInfo { 
 	String Id;
 	String name; 
-	String Phone_number;   
+	String Phone_number;
 	String department;   
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	Vector v;
 	StringTokenizer tok;   
 	UserInfo(String title) throws IOException{   
-		System.out.println(title);
+		System.out.println(title);   
 		mainScreen();
 	}      
 	
-	void mainScreen() throws IOException{
+	void mainScreen() throws IOException{   
 		for(;;)
 		{
 			System.out.println("       ************************************       ");
@@ -33,7 +33,7 @@ public class UserInfo {
 			System.out.println("       ************************************       "); 
 			System.out.println("      등록전! UserInfo.txt 파일이 디렉토리에 있는지 확인해주세요"); 
 			System.out.print("      선택[숫자]:");
-			String str=br.readLine();
+			String str=br.readLine(); 
 			if(str.equals(""))    
 			{
 				System.out.println("입력값을 넣어주세요.");
@@ -124,7 +124,7 @@ public class UserInfo {
 			String idtest = (String)test.get("Id");
 			if(Id.equals(idtest))
 			{
-				idCheck = true;
+				idCheck = true;  
 				v.removeElementAt(i);
 			}
 		}   
@@ -154,7 +154,7 @@ public class UserInfo {
 			bw.newLine();
 			bw.flush();
 		}
-		/*id 부터 재입력=수정작업 시작*/
+		/*id 부터 재입력=수정작업 시작*/  
 		System.out.println("학번/이름/전공/전화번호 각각 Enter키 후 입력해주세요");
 		System.out.println("단, 전화번호 외의 다른 정보도 수정가능합니다:).");
 		Id = br.readLine();
@@ -177,7 +177,7 @@ public class UserInfo {
 			bw.write(",");
 			bw.write(department);
 			bw.write(",");
-			bw.write(Phone_number);
+			bw.write(Phone_number);  
 			bw.newLine();
 			bw.flush();
 			System.out.println("수정 완료!");
