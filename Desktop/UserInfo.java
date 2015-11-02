@@ -5,25 +5,25 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap; 
-import java.util.StringTokenizer; 
+import java.util.StringTokenizer;
 import java.util.Vector;  
-     
+    
 public class UserInfo {   
 	String Id;     
 	String name;    
-	String Phone_number;  
-	String department;  
+	String Phone_number;    
+	String department;   
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	Vector v;
 	StringTokenizer tok;
 	UserInfo(String title) throws IOException{ 
 		System.out.println(title);
 		mainScreen();
-	}
-	
-	void mainScreen() throws IOException{
+	} 
+
+	void mainScreen() throws IOException{ 
 		for(;;)
-		{
+		{ 
 			System.out.println("       ************************************       ");
 			System.out.println("          [1] 학생 정보 등록            "); 
 			System.out.println("          [2] 학생 정보 수정             "); 
@@ -34,12 +34,12 @@ public class UserInfo {
 			System.out.println("      등록전! UserInfo.txt 파일이 디렉토리에 있는지 확인해주세요"); 
 			System.out.print("      선택[숫자]:");
 			String str=br.readLine(); 
-			if(str.equals(""))    
+			if(str.equals(""))  
 			{
 				System.out.println("입력값을 넣어주세요."); 
 				mainScreen();
 			}
-			char c= str.charAt(0);  
+			char c= str.charAt(0);
 			switch(c){    
 			  case '1':
 				  addUserInfo();    
@@ -87,8 +87,8 @@ public class UserInfo {
 		System.out.print("전화번호:");  
 		Phone_number = br.readLine(); 
 		
-		FileWriter fw = null;
-		BufferedWriter bw = null; 
+		FileWriter fw = null;   
+		BufferedWriter bw = null;    
 		if(Id.equals("") || name.equals("") || department.equals(""))
 		{ 
 			System.out.println("누락된 항목이 잇습니다.");
@@ -136,8 +136,7 @@ public class UserInfo {
 		HashMap modifyFile = new HashMap();
 		fw = new FileWriter("UserInfo.txt", false);  //true: 이어쓰기 false: 덮어쓰기
 		bw = new BufferedWriter(fw);
-		for(int i=0; i<v.size(); i++)
-		{     
+		for(int i=0; i<v.size(); i++) {
 			modifyFile = (HashMap)v.get(i);
 			String Id = (String)modifyFile.get("Id");
 			String name = (String)modifyFile.get("name");
