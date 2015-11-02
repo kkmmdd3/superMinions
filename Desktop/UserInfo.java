@@ -127,18 +127,18 @@ public class UserInfo {
 				idCheck = true;
 				v.removeElementAt(i);
 			}
-		}
+		}   
 		if(!idCheck){
 			System.out.println("해당 학번이 존재하지 않습니다.");
 			updateUserInfo();
-		}
+		}   
 		FileWriter fw = null;
 		BufferedWriter bw = null;
 		HashMap modifyFile = new HashMap();
 		fw = new FileWriter("UserInfo.txt", false);  //true: 이어쓰기 false: 덮어쓰기
 		bw = new BufferedWriter(fw);
 		for(int i=0; i<v.size(); i++)
-		{
+		{     
 			modifyFile = (HashMap)v.get(i);
 			String Id = (String)modifyFile.get("Id");
 			String name = (String)modifyFile.get("name");
@@ -167,11 +167,11 @@ public class UserInfo {
 			System.out.println("누락된 항목이 있습니다");
 			System.out.println("다시 입력해주세요");
 			addUserInfo();
-		}
-		else{
-			fw = new FileWriter("UserInfo.txt", true);
-			bw = new BufferedWriter(fw);
-			bw.write(Id);
+		}    
+		else{    
+			fw = new FileWriter("UserInfo.txt", true);    
+			bw = new BufferedWriter(fw);   
+			bw.write(Id);   
 			bw.write(",");
 			bw.write(name);
 			bw.write(",");
@@ -232,13 +232,13 @@ public class UserInfo {
 			bw.newLine();
 			bw.flush();
 		}
-		v.clear();
+		v.clear();   
 	}
-	
-	void watchUserInfo() throws IOException{
+	   
+	void watchUserInfo() throws IOException{   
 		v = userData();
-		HashMap test = new HashMap();
-		for(int i=0; i<v.size(); i++)
+		HashMap test = new HashMap();   
+		for(int i=0; i<v.size(); i++)   
 		{
 			test = (HashMap)v.get(i);
 			String idtest = (String)test.get("Id");
