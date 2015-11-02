@@ -8,9 +8,9 @@ import java.util.HashMap;
 import java.util.StringTokenizer; 
 import java.util.Vector;  
      
-public class UserInfo {
-	String Id;  
-	String name; 
+public class UserInfo {   
+	String Id;     
+	String name;    
 	String Phone_number;  
 	String department;  
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -95,7 +95,7 @@ public class UserInfo {
 			System.out.println("다시 입력해주세요");
 			return; 
 		} 
-		else{  
+		else{     
 			fw = new FileWriter("UserInfo.txt", true); 
 			bw = new BufferedWriter(fw);
 			bw.write(Id); 
