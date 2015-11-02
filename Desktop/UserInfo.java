@@ -12,7 +12,7 @@ public class UserInfo {
 	String Id;     
 	String name;    
 	String Phone_number;  
-	String department;  
+	String department;   
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	Vector v;
 	StringTokenizer tok;
