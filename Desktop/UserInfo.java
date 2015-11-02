@@ -9,10 +9,10 @@ import java.util.StringTokenizer;
 import java.util.Vector;
    
 public class UserInfo {
-	String Id;
+	String Id;  
 	String name; 
-	String Phone_number;
-	String department;
+	String Phone_number;  
+	String department;  
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	Vector v;
 	StringTokenizer tok;
