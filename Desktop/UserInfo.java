@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.Vector;  
    
-public class UserInfo {
+public class UserInfo { 
 	String Id;  
 	String name; 
 	String Phone_number;  
@@ -21,7 +21,7 @@ public class UserInfo {
 		mainScreen();
 	}
 	
-	void mainScreen() throws IOException{
+	void mainScreen() throws IOException{ 
 		for(;;)
 		{
 			System.out.println("       ************************************       ");
@@ -36,7 +36,7 @@ public class UserInfo {
 			String str=br.readLine(); 
 			if(str.equals(""))    
 			{
-				System.out.println("입력값을 넣어주세요.");
+				System.out.println("입력값을 넣어주세요."); 
 				mainScreen();
 			}
 			char c= str.charAt(0);
