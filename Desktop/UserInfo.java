@@ -44,7 +44,7 @@ public class UserInfo {
 			  case '1':
 				  addUserInfo();
 				  break;
-			  case '2':
+			  case '2':   
 				  updateUserInfo();
 				  break;
 			  case '3':
@@ -56,13 +56,13 @@ public class UserInfo {
 			  case '5':
 				  endUserInfo();
 				  break;
-			  default:
+			  default:   
 				  System.out.println("잘못 입력하셨습니다.");
 				  System.out.println("");
 				  break;
 			}
 		}
-	} 
+	}    
 	
 	void addUserInfo() throws IOException{
 		v=userData();  //파일 내용저장 매소드
@@ -77,13 +77,13 @@ public class UserInfo {
 				System.out.println("이미 등록되어 있는 학번입니다.");
 				System.out.println("다시 등록해주세요");
 				return;
-			}
+			}   
 		}
 		
-		System.out.print("이름:");
+		System.out.print("이름:");   
 		name = br.readLine();
-		System.out.print("전공:");
-		department = br.readLine();
+		System.out.print("전공:");   
+		department = br.readLine();   
 		System.out.print("전화번호:");
 		Phone_number = br.readLine();
 		
