@@ -8,9 +8,9 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.Vector;  
    
-public class UserInfo {
+public class UserInfo {  
 	String Id;  
-	String name; 
+	String name;   
 	String Phone_number;  
 	String department;  
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
