@@ -87,8 +87,8 @@ public class UserInfo {
 		System.out.print("전화번호:");  
 		Phone_number = br.readLine(); 
 		
-		FileWriter fw = null;
-		BufferedWriter bw = null; 
+		FileWriter fw = null;   
+		BufferedWriter bw = null;    
 		if(Id.equals("") || name.equals("") || department.equals(""))
 		{ 
 			System.out.println("누락된 항목이 잇습니다.");
