@@ -59,12 +59,12 @@ public class UserInfo {
 			  default:         
 				  System.out.println("잘못 입력하셨습니다.");   
 				  System.out.println("");  
-				  break;
+				  break;  
 			}
 		}
 	}    
 	
-	void addUserInfo() throws IOException{ 
+	void addUserInfo() throws IOException{   
 		v=userData();  //파일 내용저장 매소드 
 		HashMap test = new HashMap(); 
 		System.out.print("학번: ");
@@ -87,7 +87,7 @@ public class UserInfo {
 		System.out.print("전화번호:");  
 		Phone_number = br.readLine(); 
 		
-		FileWriter fw = null;
+		FileWriter fw = null;  
 		BufferedWriter bw = null; 
 		if(Id.equals("") || name.equals("") || department.equals(""))
 		{ 
