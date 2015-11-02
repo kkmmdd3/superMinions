@@ -111,8 +111,7 @@ public class UserInfo {
 		}
 	}
 	
-	void updateUserInfo() throws IOException
-	{
+	void updateUserInfo() throws IOException {
 		v=userData();
 		HashMap test = new HashMap();
 		boolean idCheck = false;
