@@ -39,7 +39,7 @@ public class UserInfo {
 				System.out.println("입력값을 넣어주세요."); 
 				mainScreen();
 			}
-			char c= str.charAt(0);
+			char c= str.charAt(0);  
 			switch(c){    
 			  case '1':
 				  addUserInfo();    
