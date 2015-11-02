@@ -8,18 +8,18 @@ import java.util.HashMap;
 import java.util.StringTokenizer;   
 import java.util.Vector;
    
-public class UserInfo {    
-	String Id;   
-	String name;  
-	String Phone_number;
-	String department;
+public class UserInfo {
+	String Id;
+	String name;
+	String Phone_number;   
+	String department;   
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	Vector v;   
+	Vector v;
 	StringTokenizer tok;   
 	UserInfo(String title) throws IOException{   
 		System.out.println(title);
 		mainScreen();
-	}
+	}      
 	
 	void mainScreen() throws IOException{
 		for(;;)
@@ -34,15 +34,15 @@ public class UserInfo {
 			System.out.println("      등록전! UserInfo.txt 파일이 디렉토리에 있는지 확인해주세요");
 			System.out.print("      선택[숫자]:");
 			String str=br.readLine();
-			if(str.equals(""))
+			if(str.equals(""))    
 			{
 				System.out.println("입력값을 넣어주세요.");
 				mainScreen();
 			}
 			char c= str.charAt(0);
-			switch(c){
+			switch(c){    
 			  case '1':
-				  addUserInfo();
+				  addUserInfo();    
 				  break;
 			  case '2':   
 				  updateUserInfo();
@@ -56,9 +56,9 @@ public class UserInfo {
 			  case '5':
 				  endUserInfo();
 				  break;
-			  default:   
-				  System.out.println("잘못 입력하셨습니다.");
-				  System.out.println("");
+			  default:         
+				  System.out.println("잘못 입력하셨습니다.");   
+				  System.out.println("");  
 				  break;
 			}
 		}
@@ -69,7 +69,7 @@ public class UserInfo {
 		HashMap test = new HashMap();
 		System.out.print("학번: ");
 		Id = br.readLine();
-		for(int i=0; i<v.size(); i++){
+		for(int i=0; i<v.size(); i++){ 
 			test = (HashMap)v.get(i);
 			String idmulticheck = (String)test.get("Id");
 			if(Id.equals(idmulticheck))
@@ -84,7 +84,7 @@ public class UserInfo {
 		name = br.readLine();
 		System.out.print("전공:");   
 		department = br.readLine();   
-		System.out.print("전화번호:");
+		System.out.print("전화번호:"); 
 		Phone_number = br.readLine();
 		
 		FileWriter fw = null;
@@ -95,11 +95,11 @@ public class UserInfo {
 			System.out.println("다시 입력해주세요");
 			return;
 		}
-		else{
+		else{ 
 			fw = new FileWriter("UserInfo.txt", true);
 			bw = new BufferedWriter(fw);
 			bw.write(Id);
-			bw.write(",");
+			bw.write(","); 
 			bw.write(name);
 			bw.write(",");
 			bw.write(department);
