@@ -181,7 +181,6 @@ public class UserInfo {
 		v.clear();
 	}
 
-
 	//학생정보 삭제
 	void deleteUserInfo() throws IOException{
 		v=userData();
