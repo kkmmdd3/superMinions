@@ -11,7 +11,7 @@ import java.util.Vector;
 public class UserInfo {   
 	String Id;     
 	String name;    
-	String Phone_number;  
+	String Phone_number;    
 	String department;   
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	Vector v;
