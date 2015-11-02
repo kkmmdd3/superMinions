@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.Vector;  
    
-public class UserInfo {  
+public class UserInfo {
 	String Id;  
 	String name; 
 	String Phone_number;  
@@ -16,12 +16,12 @@ public class UserInfo {
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	Vector v;
 	StringTokenizer tok;
-	UserInfo(String title) throws IOException{   
+	UserInfo(String title) throws IOException{ 
 		System.out.println(title);
 		mainScreen();
 	}
 	
-	void mainScreen() throws IOException{   
+	void mainScreen() throws IOException{
 		for(;;)
 		{
 			System.out.println("       ************************************       ");
@@ -64,7 +64,7 @@ public class UserInfo {
 		}
 	}    
 	
-	void addUserInfo() throws IOException{  
+	void addUserInfo() throws IOException{ 
 		v=userData();  //파일 내용저장 매소드 
 		HashMap test = new HashMap(); 
 		System.out.print("학번: ");
@@ -154,7 +154,7 @@ public class UserInfo {
 			bw.newLine();
 			bw.flush();
 		}
-		/*id 부터 재입력=수정작업 시작*/    
+		/*id 부터 재입력=수정작업 시작*/
 		System.out.println("학번/이름/전공/전화번호 각각 Enter키 후 입력해주세요");
 		System.out.println("단, 전화번호 외의 다른 정보도 수정가능합니다:).");
 		Id = br.readLine();
