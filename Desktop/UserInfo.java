@@ -1,23 +1,23 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader;  
-import java.io.FileWriter;   
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.Vector;
    
-public class UserInfo { 
+public class UserInfo {
 	String Id;
 	String name; 
 	String Phone_number;
-	String department;   
+	String department;
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	Vector v;
-	StringTokenizer tok;   
+	StringTokenizer tok;
 	UserInfo(String title) throws IOException{   
-		System.out.println(title);   
+		System.out.println(title);
 		mainScreen();
 	}      
 	
