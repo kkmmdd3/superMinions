@@ -21,7 +21,7 @@ public class UserInfo {
 		mainScreen();
 	}
 	
-	void mainScreen() throws IOException{
+	void mainScreen() throws IOException{ 
 		for(;;)
 		{
 			System.out.println("       ************************************       ");
@@ -42,7 +42,7 @@ public class UserInfo {
 			char c= str.charAt(0);
 			switch(c){    
 			  case '1':
-				  addUserInfo();    
+				  addUserInfo();
 				  break;
 			  case '2':   
 				  updateUserInfo();
