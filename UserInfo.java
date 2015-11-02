@@ -253,6 +253,33 @@ public class UserInfo {
 		System.out.println("size: "+v.size());
 		v.clear();
 	}
+
+	Vector userData() throws IOException{
+		FileReader fr = null;
+		BufferedReader br = null;
+		Vector v= new Vector();
+		fr = new FileReader("UserInfo.txt");
+		br = new BufferedReader(fr);
+		String message;
+		while((message = br.readLine())!=null)
+		{
+			HashMap map = new HashMap();
+			tok = new StringTokenizer(message, ",");
+			while(tok.hasMoreTokens()){
+				Id = tok.nextToken();
+				name = tok.nextToken();
+				department = tok.nextToken();
+				Phone_number = tok.nextToken();
+				map.put("Id", Id);
+				map.put("name", name);
+				map.put("department", department);
+				map.put("Phone_number", Phone_number);
+				
+			}
+			v.addElement(map);  
+		}
+		return v;   
+	}
 	
 	public static void main(String[] args) throws IOException
 	{
