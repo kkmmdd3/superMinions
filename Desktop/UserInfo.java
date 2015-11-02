@@ -1,4 +1,4 @@
-import java.io.BufferedReader;  
+import java.io.BufferedReader;
 import java.io.BufferedWriter;  
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.Vector;  
    
-public class UserInfo { 
+public class UserInfo {
 	String Id;  
 	String name; 
 	String Phone_number;  
@@ -21,7 +21,7 @@ public class UserInfo {
 		mainScreen();
 	}
 	
-	void mainScreen() throws IOException{ 
+	void mainScreen() throws IOException{
 		for(;;)
 		{
 			System.out.println("       ************************************       ");
