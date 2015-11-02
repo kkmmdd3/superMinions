@@ -136,8 +136,7 @@ public class UserInfo {
 		HashMap modifyFile = new HashMap();
 		fw = new FileWriter("UserInfo.txt", false);  //true: 이어쓰기 false: 덮어쓰기
 		bw = new BufferedWriter(fw);
-		for(int i=0; i<v.size(); i++)
-		{     
+		for(int i=0; i<v.size(); i++) {
 			modifyFile = (HashMap)v.get(i);
 			String Id = (String)modifyFile.get("Id");
 			String name = (String)modifyFile.get("name");
