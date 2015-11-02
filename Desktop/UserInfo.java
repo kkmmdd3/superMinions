@@ -34,7 +34,7 @@ public class UserInfo {
 			System.out.println("      등록전! UserInfo.txt 파일이 디렉토리에 있는지 확인해주세요"); 
 			System.out.print("      선택[숫자]:");
 			String str=br.readLine(); 
-			if(str.equals(""))    
+			if(str.equals(""))  
 			{
 				System.out.println("입력값을 넣어주세요."); 
 				mainScreen();
