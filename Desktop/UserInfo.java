@@ -23,7 +23,7 @@ public class UserInfo {
 
 	void mainScreen() throws IOException{ 
 		for(;;)
-		{
+		{ 
 			System.out.println("       ************************************       ");
 			System.out.println("          [1] 학생 정보 등록            "); 
 			System.out.println("          [2] 학생 정보 수정             "); 
@@ -39,7 +39,7 @@ public class UserInfo {
 				System.out.println("입력값을 넣어주세요."); 
 				mainScreen();
 			}
-			char c= str.charAt(0);  
+			char c= str.charAt(0);
 			switch(c){    
 			  case '1':
 				  addUserInfo();    
