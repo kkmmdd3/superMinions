@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.FileReader; 
+import java.io.FileWriter;  
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;    
@@ -68,7 +68,7 @@ public class UserInfo {
 		v=userData();  //파일 내용저장 매소드
 		HashMap test = new HashMap();
 		System.out.print("학번: ");
-		Id = br.readLine();
+		Id = br.readLine(); 
 		for(int i=0; i<v.size(); i++){ 
 			test = (HashMap)v.get(i);
 			String idmulticheck = (String)test.get("Id");
@@ -82,10 +82,10 @@ public class UserInfo {
 		
 		System.out.print("이름:");   
 		name = br.readLine();
-		System.out.print("전공:");   
+		System.out.print("전공:");    
 		department = br.readLine();   
-		System.out.print("전화번호:"); 
-		Phone_number = br.readLine();
+		System.out.print("전화번호:");  
+		Phone_number = br.readLine(); 
 		
 		FileWriter fw = null;
 		BufferedWriter bw = null;
