@@ -1,16 +1,16 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader; 
-import java.io.FileWriter;  
+import java.io.FileReader;  
+import java.io.FileWriter;   
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;    
 import java.util.StringTokenizer;   
 import java.util.Vector;
    
-public class UserInfo {
+public class UserInfo { 
 	String Id;
-	String name;
+	String name; 
 	String Phone_number;   
 	String department;   
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -25,13 +25,13 @@ public class UserInfo {
 		for(;;)
 		{
 			System.out.println("       ************************************       ");
-			System.out.println("          [1] 학생 정보 등록            ");
-			System.out.println("          [2] 학생 정보 수정             ");
-			System.out.println("          [3] 학생 정보 삭제           ");
-			System.out.println("          [4] 학생 정보 조회             ");
+			System.out.println("          [1] 학생 정보 등록            "); 
+			System.out.println("          [2] 학생 정보 수정             "); 
+			System.out.println("          [3] 학생 정보 삭제           "); 
+			System.out.println("          [4] 학생 정보 조회             "); 
 			System.out.println("          [5] 프로그램 종료            ");
-			System.out.println("       ************************************       ");
-			System.out.println("      등록전! UserInfo.txt 파일이 디렉토리에 있는지 확인해주세요");
+			System.out.println("       ************************************       "); 
+			System.out.println("      등록전! UserInfo.txt 파일이 디렉토리에 있는지 확인해주세요"); 
 			System.out.print("      선택[숫자]:");
 			String str=br.readLine();
 			if(str.equals(""))    
@@ -64,11 +64,11 @@ public class UserInfo {
 		}
 	}    
 	
-	void addUserInfo() throws IOException{
-		v=userData();  //파일 내용저장 매소드
-		HashMap test = new HashMap();
+	void addUserInfo() throws IOException{ 
+		v=userData();  //파일 내용저장 매소드 
+		HashMap test = new HashMap(); 
 		System.out.print("학번: ");
-		Id = br.readLine(); 
+		Id = br.readLine();  
 		for(int i=0; i<v.size(); i++){ 
 			test = (HashMap)v.get(i);
 			String idmulticheck = (String)test.get("Id");
@@ -83,23 +83,23 @@ public class UserInfo {
 		System.out.print("이름:");   
 		name = br.readLine();
 		System.out.print("전공:");    
-		department = br.readLine();   
+		department = br.readLine();    
 		System.out.print("전화번호:");  
 		Phone_number = br.readLine(); 
 		
 		FileWriter fw = null;
-		BufferedWriter bw = null;
+		BufferedWriter bw = null; 
 		if(Id.equals("") || name.equals("") || department.equals(""))
-		{
+		{ 
 			System.out.println("누락된 항목이 잇습니다.");
 			System.out.println("다시 입력해주세요");
-			return;
-		}
-		else{ 
+			return; 
+		} 
+		else{  
 			fw = new FileWriter("UserInfo.txt", true);
 			bw = new BufferedWriter(fw);
-			bw.write(Id);
-			bw.write(","); 
+			bw.write(Id); 
+			bw.write(",");  
 			bw.write(name);
 			bw.write(",");
 			bw.write(department);
