@@ -21,7 +21,7 @@ public class UserInfo {
 		mainScreen();
 	} 
 
-	void mainScreen() throws IOException{
+	void mainScreen() throws IOException{ 
 		for(;;)
 		{
 			System.out.println("       ************************************       ");
