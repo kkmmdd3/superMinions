@@ -181,6 +181,56 @@ public class UserInfo {
 		v.clear();
 	}
 
+	void deleteUserInfo() throws IOException{
+		v=userData();
+		HashMap test = new HashMap();
+		boolean idCheck = false;
+		System.out.println("삭제할 학번을 입력하세요");
+		Id = br.readLine();
+		for(int i=0; i<v.size(); i++){
+			test = (HashMap)v.get(i);
+			String idtest = (String)test.get("Id");
+			if(Id.equals(idtest))
+			{
+				System.out.println("아래의 삭제 정보를 확인해주세요.");
+				System.out.println("학번 확인: "+ test.get("Id"));
+				System.out.println("이 름: "+ test.get("name"));
+				System.out.println("전 공: "+ test.get("department"));
+				System.out.println("전화번호: "+ test.get("Phone_number"));
+				idCheck=true;
+				v.removeElementAt(i);
+				System.out.println("삭제 완료!");
+			}
+		}
+		if(!idCheck){
+			System.out.println("해당하는 학번이 없습니다");
+			deleteUserInfo();
+		}
+		FileWriter fw = null;
+		BufferedWriter bw = null;
+		HashMap modifyFile = new HashMap();
+		fw = new FileWriter("UserInfo.txt", false);
+		bw = new BufferedWriter(fw);
+		for(int i=0; i<v.size(); i++)
+		{
+			modifyFile = (HashMap)v.get(i);
+			String Id = (String)modifyFile.get("Id");
+			String name = (String)modifyFile.get("name");
+			String department = (String)modifyFile.get("department");
+			String Phone_number = (String)modifyFile.get("Phone_number");
+			bw.write(Id);
+			bw.write(",");
+			bw.write(name);
+			bw.write(",");
+			bw.write(department);
+			bw.write(",");
+			bw.write(Phone_number);
+			bw.newLine();
+			bw.flush();
+		}
+		v.clear();   
+	}
+
 	//보기 기능 [조회]
 	void watchUserInfo() throws IOException{
 		v = userData();
