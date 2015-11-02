@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap; 
 import java.util.StringTokenizer; 
 import java.util.Vector;  
-     
+           
 public class UserInfo {   
 	String Id;     
 	String name;    
@@ -19,8 +19,8 @@ public class UserInfo {
 	UserInfo(String title) throws IOException{ 
 		System.out.println(title);
 		mainScreen();
-	}
-	
+	}     
+	        
 	void mainScreen() throws IOException{
 		for(;;)
 		{
