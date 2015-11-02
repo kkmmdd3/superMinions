@@ -19,7 +19,7 @@ public class UserInfo {
 	UserInfo(String title) throws IOException{   
 		System.out.println(title);
 		mainScreen();
-	}      
+	}        
 	
 	void mainScreen() throws IOException{   
 		for(;;)
@@ -125,12 +125,12 @@ public class UserInfo {
 			if(Id.equals(idtest))
 			{
 				idCheck = true;  
-				v.removeElementAt(i);
+				v.removeElementAt(i);  
 			}
 		}   
-		if(!idCheck){
+		if(!idCheck){  
 			System.out.println("해당 학번이 존재하지 않습니다.");
-			updateUserInfo();
+			updateUserInfo();  
 		}   
 		FileWriter fw = null;
 		BufferedWriter bw = null;
