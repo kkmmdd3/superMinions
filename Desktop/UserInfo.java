@@ -4,19 +4,19 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap; 
-import java.util.StringTokenizer;
+import java.util.HashMap;    
+import java.util.StringTokenizer;   
 import java.util.Vector;
-
+   
 public class UserInfo {    
-	String Id;
+	String Id;   
 	String name;  
 	String Phone_number;
 	String department;
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	Vector v;
-	StringTokenizer tok;
-	UserInfo(String title) throws IOException{
+	Vector v;   
+	StringTokenizer tok;   
+	UserInfo(String title) throws IOException{   
 		System.out.println(title);
 		mainScreen();
 	}
