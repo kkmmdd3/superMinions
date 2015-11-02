@@ -19,8 +19,8 @@ public class UserInfo {
 	UserInfo(String title) throws IOException{ 
 		System.out.println(title);
 		mainScreen();
-	}     
-	        
+	} 
+
 	void mainScreen() throws IOException{
 		for(;;)
 		{
