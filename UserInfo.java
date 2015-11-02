@@ -1,79 +1,72 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader;  
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap; 
+import java.util.HashMap;
 import java.util.StringTokenizer;
-import java.util.Vector;  
-<<<<<<< HEAD
+import java.util.Vector;
 
-=======
-    
->>>>>>> 564b669f3ef05cdae69363354ef1c413ed538cc4
-public class UserInfo {   
-	String Id;     
-	String name;    
-	String Phone_number;    
-	String department;   
+public class UserInfo {
+	String Id;
+	String name;
+	String Phone_number;
+	String department;
+	
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	Vector v;
 	StringTokenizer tok;
-	UserInfo(String title) throws IOException{ 
+	UserInfo(String title) throws IOException{
 		System.out.println(title);
 		mainScreen();
-	} 
-
-	void mainScreen() throws IOException{ 
+	}
+	//메뉴화면
+	void mainScreen() throws IOException{
 		for(;;)
-		{ 
-			System.out.println("       ************************************       ");
-			System.out.println("          [1] 학생 정보 등록            "); 
-			System.out.println("          [2] 학생 정보 수정             "); 
-			System.out.println("          [3] 학생 정보 삭제           "); 
-			System.out.println("          [4] 학생 정보 조회             "); 
-			System.out.println("          [5] 프로그램 종료            ");
-			System.out.println("       ************************************       "); 
-			System.out.println("      등록전! UserInfo.txt 파일이 디렉토리에 있는지 확인해주세요"); 
-			System.out.print("      선택[숫자]:");
-			String str=br.readLine(); 
-			if(str.equals(""))  
+		{
+			System.out.println("*********************************");
+			System.out.println(" [1]등록 [2]수정 [3]삭제 [4]조회 [5]종료 ");
+			System.out.println("*********************************");
+			System.out.print("선택[숫자]: ");
+			String str=br.readLine();
+			if(str.equals(""))
 			{
-				System.out.println("입력값을 넣어주세요."); 
+				System.out.println("입력값을 넣어주세요.");
 				mainScreen();
 			}
 			char c= str.charAt(0);
-			switch(c){    
+			switch(c){
 			  case '1':
-				  addUserInfo();    
-				  break;  
-			  case '2':   
-				  updateUserInfo();
+				  //addUserInfo();
+				  break;
+			  case '2':
+				  //updateUserInfo();
 				  break;
 			  case '3':
-				  deleteUserInfo();
+				  //deleteUserInfo();
 				  break;
 			  case '4':
-				  watchUserInfo();  
+				  //watchUserInfo();
 				  break;
 			  case '5':
-				  endUserInfo();
+				  //endUserInfo();
 				  break;
-			  default:           
-				  System.out.println("잘못 입력하셨습니다.");   
-				  System.out.println("");    
+			  default:
+				  System.out.println("잘못 입력하셨습니다.");
+				  System.out.println("");
 				  break;
 			}
 		}
-	}    
-	
-	void addUserInfo() throws IOException{    
-		v=userData();  //파일 내용저장 매소드 
-		HashMap test = new HashMap(); 
+	}
+
+	//사용자 추가 하기
+	void addUserInfo() throws IOException{
+		v=userData();  //파일 내용저장 매소드
+		HashMap test = new HashMap();
 		System.out.print("학번: ");
-		Id = br.readLine();  
-		for(int i=0; i<v.size(); i++){ 
+		Id = br.readLine();
+		for(int i=0; i<v.size(); i++){
 			test = (HashMap)v.get(i);
 			String idmulticheck = (String)test.get("Id");
 			if(Id.equals(idmulticheck))
@@ -81,29 +74,29 @@ public class UserInfo {
 				System.out.println("이미 등록되어 있는 학번입니다.");
 				System.out.println("다시 등록해주세요");
 				return;
-			}   
+			}
 		}
 		
-		System.out.print("이름:");   
+		System.out.print("이름: ");
 		name = br.readLine();
-		System.out.print("전공:");    
-		department = br.readLine();    
-		System.out.print("전화번호:");  
-		Phone_number = br.readLine(); 
+		System.out.print("전공: ");
+		department = br.readLine();
+		System.out.print("전화번호: ");
+		Phone_number = br.readLine();
 		
-		FileWriter fw = null;   
-		BufferedWriter bw = null;    
+		FileWriter fw = null;
+		BufferedWriter bw = null;
 		if(Id.equals("") || name.equals("") || department.equals(""))
-		{ 
+		{
 			System.out.println("누락된 항목이 잇습니다.");
 			System.out.println("다시 입력해주세요");
-			return; 
-		} 
-		else{     
-			fw = new FileWriter("UserInfo.txt", true); 
+			return;
+		}
+		else{
+			fw = new FileWriter("UserInfo.txt", true);
 			bw = new BufferedWriter(fw);
-			bw.write(Id); 
-			bw.write(",");  
+			bw.write(Id);
+			bw.write(",");
 			bw.write(name);
 			bw.write(",");
 			bw.write(department);
@@ -112,10 +105,9 @@ public class UserInfo {
 			bw.newLine();
 			bw.flush();
 			bw.close();
-                                System.out.println("등록완료");
 		}
-	}
-	
+
+	//학생정보 업데이트
 	void updateUserInfo() throws IOException {
 		v=userData();
 		HashMap test = new HashMap();
@@ -134,15 +126,15 @@ public class UserInfo {
 		}   
 		if(!idCheck){  
 			System.out.println("해당 학번이 존재하지 않습니다.");
-			//mainScreen();
-                                  updateUserInfo(); 
+			updateUserInfo();  
 		}   
 		FileWriter fw = null;
 		BufferedWriter bw = null;
 		HashMap modifyFile = new HashMap();
 		fw = new FileWriter("UserInfo.txt", false);  //true: 이어쓰기 false: 덮어쓰기
 		bw = new BufferedWriter(fw);
-		for(int i=0; i<v.size(); i++) {
+		for(int i=0; i<v.size(); i++)
+		{     
 			modifyFile = (HashMap)v.get(i);
 			String Id = (String)modifyFile.get("Id");
 			String name = (String)modifyFile.get("name");
@@ -188,7 +180,8 @@ public class UserInfo {
 		}
 		v.clear();
 	}
-	
+
+	//학생정보 삭제
 	void deleteUserInfo() throws IOException{
 		v=userData();
 		HashMap test = new HashMap();
@@ -238,32 +231,29 @@ public class UserInfo {
 		}
 		v.clear();   
 	}
-	   
-	void watchUserInfo() throws IOException{   
+
+	//보기 기능 [조회]
+	void watchUserInfo() throws IOException{
 		v = userData();
-		HashMap test = new HashMap();   
-		for(int i=0; i<v.size(); i++)   
+		HashMap test = new HashMap();
+		for(int i=0; i<v.size(); i++)
 		{
 			test = (HashMap)v.get(i);
 			String idtest = (String)test.get("Id");
 			String nametest = (String)test.get("name");
 			String departtest = (String)test.get("department");
 			String Phonetest = (String)test.get("Phone_number");
-			System.out.println("학번: "+ idtest+'\t'+"이 름: "+ nametest+'\t'
-					+ "전 공: "+departtest +'\t'+"전화번호: "+ Phonetest);
+			System.out.println("학번: "+ idtest + "이 름: "+ nametest
+					+ "전 공: "+departtest +"전화번호: "+ Phone_number);
 		}
 		if(v.isEmpty())
 		{
 			System.out.println("자료가 존재하지 않습니다");
 		}
+		System.out.println("size: "+v.size());
 		v.clear();
 	}
-	
-	void endUserInfo() throws IOException{
-		System.out.println("프로그램을 종료합니다");
-		System.exit(0);
-	}
-	
+
 	Vector userData() throws IOException{
 		FileReader fr = null;
 		BufferedReader br = null;
@@ -293,7 +283,6 @@ public class UserInfo {
 	
 	public static void main(String[] args) throws IOException
 	{
-		new UserInfo("              <<<<<학생관리 프로그램>>>>>>           ");
+		new UserInfo("<<<<<학생관리 프로그램>>>>>");
 	}
-}   
-       
+}
