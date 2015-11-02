@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.StringTokenizer;
-import java.util.Vector;
+import java.util.Vector;  
    
 public class UserInfo {
 	String Id;  
