@@ -43,7 +43,7 @@ public class UserInfo {
 			switch(c){    
 			  case '1':
 				  addUserInfo();    
-				  break;
+				  break;  
 			  case '2':   
 				  updateUserInfo();
 				  break;
@@ -51,12 +51,12 @@ public class UserInfo {
 				  deleteUserInfo();
 				  break;
 			  case '4':
-				  watchUserInfo();
+				  watchUserInfo();  
 				  break;
 			  case '5':
 				  endUserInfo();
 				  break;
-			  default:         
+			  default:           
 				  System.out.println("잘못 입력하셨습니다.");   
 				  System.out.println("");    
 				  break;
