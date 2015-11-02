@@ -64,7 +64,7 @@ public class UserInfo {
 		}
 	}    
 	
-	void addUserInfo() throws IOException{ 
+	void addUserInfo() throws IOException{  
 		v=userData();  //파일 내용저장 매소드 
 		HashMap test = new HashMap(); 
 		System.out.print("학번: ");
@@ -96,7 +96,7 @@ public class UserInfo {
 			return; 
 		} 
 		else{  
-			fw = new FileWriter("UserInfo.txt", true);
+			fw = new FileWriter("UserInfo.txt", true); 
 			bw = new BufferedWriter(fw);
 			bw.write(Id); 
 			bw.write(",");  
