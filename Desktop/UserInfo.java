@@ -7,8 +7,8 @@ import java.io.InputStreamReader;
 import java.util.HashMap; 
 import java.util.StringTokenizer; 
 import java.util.Vector;  
-       
-public class UserInfo{   
+
+public class UserInfo {   
 	String Id;     
 	String name;    
 	String Phone_number;  
@@ -19,8 +19,8 @@ public class UserInfo{
 	UserInfo(String title) throws IOException{ 
 		System.out.println(title);
 		mainScreen();
-	}
-	
+	} 
+
 	void mainScreen() throws IOException{
 		for(;;)
 		{
@@ -108,6 +108,7 @@ public class UserInfo{
 			bw.newLine();
 			bw.flush();
 			bw.close();
+                                System.out.println("등록완료");
 		}
 	}
 	
@@ -129,7 +130,8 @@ public class UserInfo{
 		}   
 		if(!idCheck){  
 			System.out.println("해당 학번이 존재하지 않습니다.");
-			updateUserInfo();  
+			//mainScreen();
+                                  updateUserInfo(); 
 		}   
 		FileWriter fw = null;
 		BufferedWriter bw = null;
