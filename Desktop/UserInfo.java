@@ -58,13 +58,13 @@ public class UserInfo {
 				  break;
 			  default:         
 				  System.out.println("잘못 입력하셨습니다.");   
-				  System.out.println("");  
+				  System.out.println("");    
 				  break;
 			}
 		}
 	}    
 	
-	void addUserInfo() throws IOException{  
+	void addUserInfo() throws IOException{    
 		v=userData();  //파일 내용저장 매소드 
 		HashMap test = new HashMap(); 
 		System.out.print("학번: ");
