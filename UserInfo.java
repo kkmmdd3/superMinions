@@ -22,7 +22,7 @@ public class UserInfo {
 		System.out.println(title);
 		mainScreen();
 	}
-	//
+
 	//메뉴화면
 	void mainScreen() throws IOException{
 		for(;;)
