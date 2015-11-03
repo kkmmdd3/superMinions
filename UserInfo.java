@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
+//학생관리프로그램
 public class UserInfo {
 	String Id;
 	String name;
@@ -60,7 +61,7 @@ public class UserInfo {
 		}
 	}
 
-	//사용자 추가 하기
+	//사용자보기
 	void addUserInfo() throws IOException{
 		v=userData();  //파일 내용저장 매소드
 		HashMap test = new HashMap();
