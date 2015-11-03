@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
+//학생관리프로그램
 public class UserInfo {
 	String Id;
 	String name;
