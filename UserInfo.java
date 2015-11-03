@@ -25,7 +25,7 @@ public class UserInfo {
 
 	//메뉴화면
 	void mainScreen() throws IOException{
-		// 
+	//반복
 		for(;;)
 		{
 			System.out.println("*********************************");
