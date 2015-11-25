@@ -2,12 +2,11 @@ import java.io.*;
 import java.util.*;
 
 public class Guest {
-	// 사용자로부터 메인 메뉴 선택을 받음 
 	static int selectGuestMenu() throws IOException {
 		ProcessorStudentInfo process = new ProcessorStudentInfo();
 		showGuestmenu();
-		// 사용자로부터 메뉴 선택을 받음
 		int menu = process.inputNumber();
+
 		if(menu < 1 || menu > 3)	
 			System.out.println("올바르지 않은 메뉴선택입니다.");
 
@@ -29,12 +28,11 @@ public class Guest {
 		ProcessorStudentInfo process = new ProcessorStudentInfo();
 		String filename = "studentInfo.txt";
 
-		// 파일을 읽어오는 함수
 		datahandler.readFromFile(studentList, filename);
 
 		while(true) {
-			// 사용자로부터 메뉴를 선택 받음 
 			int menu = selectGuestMenu();
+
 			if(menu == 3) 
 				break;
 
@@ -42,10 +40,10 @@ public class Guest {
 			case 1:
 				process.searchNameInStudentInfo(studentList);
 				break;
-			case 2: // 전체 출력
+			case 2:
 				process.printAllStudent(studentList);
 				break;
-			case 3: // 없애도 됨.
+			case 3:
 				break;
 			}
 		}

@@ -46,22 +46,21 @@ class Person {
 		return department;
 	}
 
-	// 주소록 데이터 출력 
 	public void printPerson() {
 		System.out.printf("%-6d \t%s \t %15s\t%s \n", id, name, phonenumber, department);
 	}
 }
 
 public class Professor {
-	private static final int PERSON_INSERT = 1;		// 사람 추가 
-	private static final int PERSON_DELETE = 2;		// 사람 삭제 
-	private static final int PERSON_CHANGE = 3;		// 사람 변경 
-	private static final int NAME_SEARCH = 4;		// 이름 검색
-	private static final int ALL_PRINT = 5;			// 전체 출력 
-	private static final int LOAD_FILE = 6;			// 외부 파일 로드 
-	private static final int SAVE_FILE = 7;			// 외부 파일 저장 
+	private static final int PERSON_INSERT = 1;
+	private static final int PERSON_DELETE = 2;
+	private static final int PERSON_CHANGE = 3;
+	private static final int NAME_SEARCH = 4;
+	private static final int ALL_PRINT = 5;
+	private static final int LOAD_FILE = 6;
+	private static final int SAVE_FILE = 7;			
 	private static final int PASSWORD_CHANGE = 8;	
-	private static final int EXIT = 9;				// 종료 
+	private static final int EXIT = 9;
 
 	static void printProfessorMainMenu() {
 		System.out.println("===========관리자 메뉴=========");
@@ -91,7 +90,7 @@ public class Professor {
 	}
 
 	public static void processProfessorMainMenu() throws IOException {
-		Hashtable<Integer, Person> studentList = new Hashtable<Integer, Person>(); // 주소록 목록
+		Hashtable<Integer, Person> studentList = new Hashtable<Integer, Person>();
 		boolean managerloop = true;
 		boolean passloop = true;
 		DatahandlerForFile datahandler = new DatahandlerForFile();
@@ -104,8 +103,8 @@ public class Professor {
 			try {
 				BufferedReader passwordinfile = new BufferedReader(new FileReader("password.txt"));
 				int professorpassword = Integer.parseInt(inputpassword.readLine());
-				String passwordinfiletostring = passwordinfile.readLine();  //password 파일내용을 String 형으로 읽어온다.
-				int passwordintegerform = Integer.parseInt(passwordinfiletostring,2); //2진수 문자형인 password를 int형 10진수로 변환하여 eword2에 저장
+				String passwordinfiletostring = passwordinfile.readLine();
+				int passwordintegerform = Integer.parseInt(passwordinfiletostring,2);
 				
 				if(professorpassword == passwordintegerform) {
 					while(managerloop) {
@@ -130,39 +129,35 @@ public class Professor {
 								process.searchNameInStudentInfo(studentList);
 								break;
 							case ALL_PRINT:
-								// 전체 출력
 								process.printAllStudent(studentList);
 								break;
 							case LOAD_FILE:
-								// 외부 파일 불러오기 
 								process.loadUserFile(studentList);
 								process.printAllStudent(studentList);
 								break;
 							case SAVE_FILE:
-								// 외부 파일 저장 
 								process.saveUserFile(studentList);
 								break;
 							case PASSWORD_CHANGE:
-								// 외부 파일 저장 
 								Password.changePassword();
 								break;
 							}
 							managerloop = false;
 						}
-						passloop = false; //managerloop를 빠져나오고, passloop도 빠져나와 상위클래스로 이동한다.
+						passloop = false;
 					}
 				}
 				else {
 					System.out.println("**패스워드가 일치하지 않습니다.");
 					passloop = false;
 				}
-				passwordinfile.close(); //파일 닫음
+				passwordinfile.close();
 			}
 			catch(Exception e) {
 				passloop = false;
 			}
 		}
-		// 파일 저장
+
 		datahandler.processForFileSave(studentList, filename);
 	}
 }
