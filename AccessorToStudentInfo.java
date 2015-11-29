@@ -4,7 +4,7 @@ public class AccessorToStudentInfo {
 
 	public void decideAccessor() throws IOException {
 		BufferedReader inputId = new BufferedReader(new InputStreamReader(System.in));
-		boolean mainloop = true;
+		boolean mainloop = true; 
 		String professorId = "professor";
 		String guestId = "guest";
 		
@@ -14,38 +14,51 @@ public class AccessorToStudentInfo {
 			String accessorId = inputId.readLine();
 			
 			if(accessorId.equals(professorId)) {
-				System.out.println("패스워드를 입력(초기 패스워드:12345678): ");
+				System.out.println("패스워드 입력(초기 패스워드:12345678): ");
 				Professor.processProfessorMainMenu();
 			}
 			else if(accessorId.equals(guestId)) {
 				Guest.processGuestMenu();
 			}
 			else if(accessorId.equals("종료")) {
-				System.out.println("종료됨."); 
+				System.out.println("전체 프로그램을 종료합니다."); 
 				mainloop = false;
+			}
+			else {
+				System.out.println("등록된 ID가 아닙니다.");
+				System.out.println("로그인 화면으로 돌아갑니다.");
 			}
 		}	
 	}	
 
-	public static void main(String[] args) throws IOException {
+	private static boolean isPasswordNotSet(int passwordSetState) {
+		if(passwordSetState == -1)
+			return true;
+		else
+			return false;
+	} 
+	
+	public static void initializePasswordBeforeBegin(){
 		try{
 			File file = new File("password.txt");
 			FileWriter fileWriter = new FileWriter(file,true);
-			FileReader isIn = new FileReader("password.txt");
-			int c = isIn.read();
-
-			if(c == -1) {
-				int initialpassword = 12345678;
-				String password = Integer.toBinaryString(initialpassword);
-				fileWriter.write(password);
+			FileReader passwordfromfile = new FileReader("password.txt");
+			int passwordSetState = passwordfromfile.read();
+			
+			if(isPasswordNotSet(passwordSetState)) {
+				String initialpassword = "12345678";
+				fileWriter.write(initialpassword);
 				fileWriter.close();
 			}
 		}
 		catch(IOException e) {
 			System.out.println(e);
 		}
-		
+	}
+	
+	public static void main(String[] args) throws IOException {
 		AccessorToStudentInfo accessor = new AccessorToStudentInfo();
+		accessor.initializePasswordBeforeBegin();
 		accessor.decideAccessor();
 	}
 }
